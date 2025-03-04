@@ -134,6 +134,7 @@ http://your-ec2-public-ip/dashboard
   - Password: `SuperSecret` (from `local.conf`)
 
 ![6](https://github.com/user-attachments/assets/670d7b8d-f04e-4693-81fc-e6bf5e7976be)
+
 ![7](https://github.com/user-attachments/assets/f4bf9ba5-8b4c-42c7-99ca-511394ccec49)
 
 ---
