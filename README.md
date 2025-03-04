@@ -14,6 +14,8 @@ This README provides detailed steps on how to set up any **Openstack** in an **E
   - **HTTP (80, 443)**: Open for Openstack Dashboard
 - **Key Pair**: Create or use an existing SSH key
 
+![1](https://github.com/user-attachments/assets/50e138ee-5e2f-4c40-ad13-5093e3e64b7c)
+
 ---
 
 ## **1. Connect to the EC2 Instance using PuTTY**
@@ -69,6 +71,8 @@ git clone https://opendev.org/openstack/devstack.git
 cd devstack
 ```
 
+![2](https://github.com/user-attachments/assets/16e25228-b9a1-4e67-aed7-7eaf1b8bf760)
+
 ---
 
 ## **4. Create Devstack Configuration**
@@ -100,6 +104,8 @@ USE_PYTHON3=True
 GIT_BASE=https://opendev.org
 ```
 
+![3](https://github.com/user-attachments/assets/909e05e4-5b86-431d-bc5d-d5cd944f5cc3)
+
 ---
 
 ## **5. Install Openstack Using Devstack**
@@ -110,6 +116,8 @@ GIT_BASE=https://opendev.org
 ```
 ☑️ If successful, you’ll see `DevStack installed successfully!`.
 
+![4](https://github.com/user-attachments/assets/56c11fc9-3c85-4b57-a324-e10a9b8fb81f)
+
 ---
 
 ## **6. Access Openstack Dashboard**
@@ -118,9 +126,15 @@ GIT_BASE=https://opendev.org
 ```bash
 http://your-ec2-public-ip/dashboard
 ```
+
+![5](https://github.com/user-attachments/assets/9c52caf9-d219-4c64-93f7-fc337c989862)
+
 - Login Details:
   - Username: `admin`
   - Password: `SuperSecret` (from `local.conf`)
+
+![6](https://github.com/user-attachments/assets/670d7b8d-f04e-4693-81fc-e6bf5e7976be)
+![7](https://github.com/user-attachments/assets/f4bf9ba5-8b4c-42c7-99ca-511394ccec49)
 
 ---
 
@@ -132,6 +146,8 @@ source openrc admin admin
 openstack service list
 ```
 ☑️ If services are listed, OpenStack is running! 🎉
+
+![8](https://github.com/user-attachments/assets/eabc6c4f-6525-42d4-9688-649a3524704f)
 
 ---
 
