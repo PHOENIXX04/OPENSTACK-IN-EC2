@@ -118,7 +118,7 @@ GIT_BASE=https://opendev.org
 ```
 ☑️ If successful, you’ll see `DevStack installed successfully!`.
 
-![4](https://github.com/user-attachments/assets/56c11fc9-3c85-4b57-a324-e10a9b8fb81f)
+![Screenshot 2025-03-05 095729](https://github.com/user-attachments/assets/aca4739a-679f-4c6b-a16a-f3e94c570d45)
 
 ---
 
