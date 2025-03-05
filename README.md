@@ -16,6 +16,8 @@ This README provides detailed steps on how to set up any **Openstack** in an **E
 
 ![1](https://github.com/user-attachments/assets/50e138ee-5e2f-4c40-ad13-5093e3e64b7c)
 
+![1](https://github.com/user-attachments/assets/b5ff89c4-9e64-4e8e-b7b8-ddc5f283f969)
+
 ---
 
 ## **1. Connect to the EC2 Instance using PuTTY**
@@ -133,9 +135,9 @@ http://your-ec2-public-ip/dashboard
   - Username: `admin`
   - Password: `SuperSecret` (from `local.conf`)
 
-![6](https://github.com/user-attachments/assets/670d7b8d-f04e-4693-81fc-e6bf5e7976be)
+![2](https://github.com/user-attachments/assets/fbc9613d-1b27-40e4-a796-7f73c8188c9f)
 
-![7](https://github.com/user-attachments/assets/f4bf9ba5-8b4c-42c7-99ca-511394ccec49)
+![3](https://github.com/user-attachments/assets/44e9abe2-b0f7-43d7-ac40-698ecdf9f346)
 
 ---
 
