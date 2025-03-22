@@ -154,8 +154,41 @@ openstack service list
 
 ---
 
-## **8. Conclusion**
+## **8. Verification of Each Service**
 
-Openstack is now setup and running on your EC2 instance. You can use Openstack to create and deploy Cloud Computing Environments.
+To verify each service (Horizon, Neutron, Keystone, etc) is active and running we will run the following commands:
 
-For more advanced configurations, refer to the [Devstack Documentation](https://github.com/openstack/devstack)
+- **Keystone (Identity Service)**
+```bash
+openstack token issue
+```
+☑️ If successful, Keystone is working.
+
+---
+
+- **Horizon (Dashboard)**
+  - Check if Apache is running:
+  ```bash
+  sudo systemctl status apache2
+  ```
+  - If it's inactive restart it:
+  ```bash
+  sudo systemctl restart apache2
+  ```
+  - Then access Horizon in a browser:
+  ```bash
+  http://your-ec2-public-ip/dashboard
+  ```
+
+---
+
+- **Neutron (Networking)**
+  - Check network agents:
+  ```bash
+  openstack network agent list
+  ```
+☑️ If agents are :-) Alive, Neutron is working.
+
+---
+
+- **Nova (Compute)**
