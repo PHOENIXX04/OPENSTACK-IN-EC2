@@ -282,3 +282,52 @@ Replace `keystone` with the failing service (e.g., `nova`, `neutron`, `glance`, 
 
 5️⃣ **Set Up Networking**
 
+1. Go to: `Project` → `Network` → `Networks`
+2. Click: `Create Network`
+3. Enter Details:
+    - Network Name: `private-net`
+    - Subnet Name: `private-subnet`
+    - Network Address: `192.168.1.0/24`
+4. Click: `Create`
+
+Then, set up a router:
+1. Go to: `Project` → `Network` → `Routers`
+2. Click: `Create Router`
+3. Set Name: `my-router`
+4. Attach Interface → Select `private-subnet`
+5. Click: `Create Router`
+
+Now `delete` the default `router` and go back to `Networks` and delete the `private network` as well.
+
+6️⃣ **Launch an Instance (VM)**
+
+1. Go to: `Project` → `Compute` → `Instances`
+2. Click: `Launch Instance`
+3. Enter Instance Details:
+    - Instance Name: `my-instance`
+    - Flavor: Select `small` (1 vCPU, 2GB RAM)
+    - Image: Select your uploaded image (e.g., `Ubuntu-22.04`)
+    - Network: Select `private-net`
+    - Key Pair: Select `my-key`
+4. Click: `Launch Instance`
+
+7️⃣ **Assign a Floating IP (If Needed)**
+
+If you want to access the instance over SSH:
+1. Go to: `Project` → `Compute` → `Instances`
+2. Click "Associate Floating IP"
+3. Allocate a new Floating IP
+4. Attach it to your instance
+
+8️⃣ **Connect to the Instance via SSH**
+
+1. Find the Floating IP of your instance:
+```bash
+openstack server list
+```
+2. SSH into the instance:
+```bash
+ssh -i my-key.pem ubuntu@<floating-ip>
+```
+
+---
