@@ -187,8 +187,98 @@ openstack token issue
   ```bash
   openstack network agent list
   ```
-☑️ If agents are :-) Alive, Neutron is working.
+☑️ If agents are `:-) Alive`, Neutron is working.
 
 ---
 
 - **Nova (Compute)**
+  - Check compute services:
+  ```bash
+  openstack compute service list
+  ```
+☑️ If `nova-compute` is listed as `up`, Nova is running.
+
+---
+
+- **Glance (Image Service)**
+  - Check available images:
+  ```bash
+  openstack image list
+  ```
+☑️ If images appear, Glance is working.
+
+---
+
+- **Cinder (Block Storage)**
+  - Check storage services:
+  ```bash
+  openstack volume service list
+  ```
+☑️ If `cinder` services are `up`, Cinder is working.
+
+---
+
+## **9. Service Down**
+
+- If a service is missing or down try restarting the specific service:
+```bash
+sudo systemctl restart devstack@keystone
+```
+Replace `keystone` with the failing service (e.g., `nova`, `neutron`, `glance`, etc.).
+
+---
+
+## **10. Deploy an Instance (VM) in Openstack Horizon**
+
+1️⃣ **Open Openstack Dashboard**
+
+  - Open your browser and go to:
+  ```bash
+  http://your-ec2-public-ip/dashboard
+  ```
+  - **Login Credentials**:
+    - **Username**: `admin`
+    - **Password**: `SuperSecret`
+
+2️⃣ **Create a New Key Pair**
+
+1. Go to: `Project` → `Compute` → `Key Pairs`
+2. Click: `Create Key Pair`
+3. Enter a Name: Example: `my-key`
+4. Key Type: Select `SSH Key (RSA)`
+5. Click: `Create Key Pair`
+6. Download the Private Key (`.pem` file) and store it safely!
+    - Example: `my-key.pem`
+    - Set correct permissions:
+    ```bash
+    chmod 600 my-key.pem
+    ```
+
+3️⃣ **Upload an Image (OS for the VM)**
+
+1. Go to: `Project` → `Compute` → `Images`
+2. Click: `Create Image`
+3. Enter Details:
+    - Name: `Ubuntu-22.04`
+    - Image Source: `Upload Image`
+    - Format: `QCOW2`
+    - URL (for Ubuntu 22.04):
+    ```bash
+    https://cloud-images.ubuntu.com/jammy/current/jammy-server-cloudimg-amd64.img
+    ```
+4. Click: `Create Image`
+5. Wait for the image to upload.
+
+4️⃣ **Create a Flavor (VM Size)**
+
+1. Go to: `Admin` → `Compute` → `Flavors`
+2. Click: `Create Flavor`
+3. Set the Following:
+    - Name: `small`
+    - vCPUs: `1`
+    - RAM: `2048` MB (2GB)
+    - Disk: `10` GB
+4. Click: `Create Flavor`
+
+5️⃣ **Set Up Networking**
+
