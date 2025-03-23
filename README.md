@@ -294,8 +294,7 @@ Then, set up a router:
 1. Go to: `Project` → `Network` → `Routers`
 2. Click: `Create Router`
 3. Set Name: `my-router`
-4. Attach Interface → Select `private-subnet`
-5. Click: `Create Router`
+4. Click: `Create Router`
 
 Now `delete` the default `router` and go back to `Networks` and delete the `private network` as well.
 
