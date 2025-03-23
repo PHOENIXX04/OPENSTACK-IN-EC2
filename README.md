@@ -332,3 +332,6 @@ Now `delete` the default `router` and go back to `Networks` and delete the `priv
 
 ## **11. Conclusion**
 
+Openstack is now setup and running on your EC2 instance. You can use Openstack to create and deploy Cloud Computing Environments just like how it is shown above.
+ 
+For more advanced configurations, refer to the [Devstack Documentation](https://github.com/openstack/devstack)
