@@ -164,6 +164,8 @@ openstack token issue
 ```
 ☑️ If successful, Keystone is working.
 
+![1](https://github.com/user-attachments/assets/9e8eab7b-9cce-42a2-b3f4-14385091d8cb)
+
 ---
 
 - **Horizon (Dashboard)**
@@ -180,6 +182,8 @@ openstack token issue
   http://your-ec2-public-ip/dashboard
   ```
 
+![2](https://github.com/user-attachments/assets/4cc069f6-bcb3-4229-bce2-b8f35578f16a)
+
 ---
 
 - **Neutron (Networking)**
@@ -188,6 +192,8 @@ openstack token issue
   openstack network agent list
   ```
 ☑️ If agents are `:-) Alive`, Neutron is working.
+
+![3](https://github.com/user-attachments/assets/f2a42f0c-1039-4520-8bc8-8a5ed6c600c3)
 
 ---
 
@@ -198,6 +204,8 @@ openstack token issue
   ```
 ☑️ If `nova-compute` is listed as `up`, Nova is running.
 
+![4](https://github.com/user-attachments/assets/4760952c-0296-4f87-aa5e-d9d5c0b3d48c)
+
 ---
 
 - **Glance (Image Service)**
@@ -207,6 +215,8 @@ openstack token issue
   ```
 ☑️ If images appear, Glance is working.
 
+![5](https://github.com/user-attachments/assets/fb69bd58-5a6e-4855-94e7-ffb63ed4c3ef)
+
 ---
 
 - **Cinder (Block Storage)**
@@ -215,6 +225,8 @@ openstack token issue
   openstack volume service list
   ```
 ☑️ If `cinder` services are `up`, Cinder is working.
+
+![6](https://github.com/user-attachments/assets/93d6dddc-7b11-4988-8119-5a544008907a)
 
 ---
 
@@ -250,6 +262,8 @@ Replace `keystone` with the failing service (e.g., `nova`, `neutron`, `glance`, 
 6. Download the Private Key (`.pem` file) and store it safely!
     - Example: `my-key.pem`
 
+![7](https://github.com/user-attachments/assets/88f6c6a2-bc04-4e29-b37e-f2c8ed00791d)
+
 3️⃣ **Upload an Image (OS for the VM)**
 
 1. Go to: `Project` → `Compute` → `Images`
@@ -265,6 +279,8 @@ Replace `keystone` with the failing service (e.g., `nova`, `neutron`, `glance`, 
 4. Click: `Create Image`
 5. Wait for the image to upload.
 
+![8](https://github.com/user-attachments/assets/40cbae48-aebc-4611-8311-977b99e29487)
+
 4️⃣ **Create a Flavor (VM Size)**
 
 1. Go to: `Admin` → `Compute` → `Flavors`
@@ -275,6 +291,8 @@ Replace `keystone` with the failing service (e.g., `nova`, `neutron`, `glance`, 
     - RAM: `2048` MB (2GB)
     - Disk: `10` GB
 4. Click: `Create Flavor`
+
+![9](https://github.com/user-attachments/assets/576a9810-29a3-405a-89ec-326fb98f4c6a)
 
 5️⃣ **Set Up Networking**
 
@@ -294,6 +312,8 @@ Then, set up a router:
 
 Now `delete` the default `router` and go back to `Networks` and delete the `private network` as well.
 
+![10](https://github.com/user-attachments/assets/1d607160-813d-464b-832e-a8743f464f72)
+
 6️⃣ **Launch an Instance (VM)**
 
 1. Go to: `Project` → `Compute` → `Instances`
@@ -306,23 +326,6 @@ Now `delete` the default `router` and go back to `Networks` and delete the `priv
     - Key Pair: Select `my-key`
 4. Click: `Launch Instance`
 
-7️⃣ **Assign a Floating IP (If Needed)**
-
-If you want to access the instance over SSH:
-1. Go to: `Project` → `Compute` → `Instances`
-2. Click "Associate Floating IP"
-3. Allocate a new Floating IP
-4. Attach it to your instance
-
-8️⃣ **Connect to the Instance via SSH**
-
-1. Find the Floating IP of your instance:
-```bash
-openstack server list
-```
-2. SSH into the instance:
-```bash
-ssh -i my-key.pem ubuntu@<floating-ip>
-```
+![11](https://github.com/user-attachments/assets/9251dad9-2565-4e9d-92b0-c5b959eeff3b)
 
 ---
