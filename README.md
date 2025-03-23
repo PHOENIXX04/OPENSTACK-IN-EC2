@@ -249,10 +249,6 @@ Replace `keystone` with the failing service (e.g., `nova`, `neutron`, `glance`, 
 5. Click: `Create Key Pair`
 6. Download the Private Key (`.pem` file) and store it safely!
     - Example: `my-key.pem`
-    - Set correct permissions:
-    ```bash
-    chmod 600 my-key.pem
-    ```
 
 3️⃣ **Upload an Image (OS for the VM)**
 
